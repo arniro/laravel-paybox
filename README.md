@@ -42,7 +42,7 @@ You can also override any configuration values except `merchant_id` and `secret_
 return Paybox::generateUrl([
     ...,
     'currency' => 'KZT' 
-])->generateUrl();
+])->redirect();
 ```
 
 ## Testing 
