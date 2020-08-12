@@ -24,6 +24,11 @@
             "Arniro\\Paybox\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Arniro\\Paybox\\Tests\\": "tests"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
