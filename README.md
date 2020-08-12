@@ -39,10 +39,10 @@ class OrdersController extends Controller
 You can also override any configuration values except `merchant_id` and `secret_key` while generating an url:
 
 ```php
-        return Paybox::generateUrl([
-            ...,
-            'currency' => 'KZT' 
-        ])->generateUrl();
+return Paybox::generateUrl([
+    ...,
+    'currency' => 'KZT' 
+])->generateUrl();
 ```
 
 ## Testing 
