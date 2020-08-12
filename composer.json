@@ -1,7 +1,6 @@
 {
     "name": "arniro/laravel-paybox",
     "description": "A Laravel wrapper for Paybox payment",
-    "type": "library",
     "license": "MIT",
     "authors": [
         {
