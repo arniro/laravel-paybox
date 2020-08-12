@@ -45,6 +45,8 @@ return Paybox::generateUrl([
 ])->redirect();
 ```
 
+> By default, all payments will be made in the testing mode until you're in production. Feel free to change this behaviour in the configuration file. 
+
 ## Testing 
 
 ```
