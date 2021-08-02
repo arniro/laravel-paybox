@@ -9,11 +9,11 @@
             "homepage": "https://arniro.io"
         }
     ],
-    "version": "0.1.1",
+    "version": "0.1.2",
     "homepage": "https://github.com/arniro/laravel-paybox",
     "keywords": ["Laravel", "Paybox"],
     "require": {
-        "php": "^7.1.3",
+        "php": "^7.1.3|^8.0",
         "illuminate/support": "~6|~7|~8"
     },
     "require-dev": {

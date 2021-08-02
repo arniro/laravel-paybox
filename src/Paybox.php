@@ -38,9 +38,9 @@ class Paybox
      * @param array $params
      * @return $this
      */
-    public function generateUrl($params)
+    public function generateUrl($params, $additionalParams = [])
     {
-        $this->request = array_merge($this->request, $this->getParams($params));
+        $this->request = array_merge($this->request, $this->getParams($params, $additionalParams));
 
         $this->url = implode('?', [static::BASE_URL, $this->buildQuery($this->request)]);
 
@@ -75,11 +75,11 @@ class Paybox
      * @param $params
      * @return array
      */
-    public function getParams($params)
+    public function getParams($params, $additionalParams = [])
     {
         return array_merge(
             $this->configParams($params),
-            $this->paymentParams($params)
+            $this->paymentParams($params, $additionalParams)
         );
     }
 
@@ -106,9 +106,9 @@ class Paybox
      * @param array $params
      * @return array
      */
-    protected function paymentParams($params)
+    protected function paymentParams($params, $additionalParams = [])
     {
-        return [
+        return array_merge([
             'pg_amount' => Arr::get($params, 'price', 0),
             'pg_description' => Arr::get($params, 'description'),
             'pg_order_id' => Arr::get($params, 'order_id'),
@@ -116,7 +116,7 @@ class Paybox
             'pg_user_phone' => Arr::get($params, 'phone'),
             'client_name' => Arr::get($params, 'name'),
             'client_address' => Arr::get($params, 'address')
-        ];
+        ], $additionalParams);
     }
 
     /**
@@ -166,3 +166,4 @@ class Paybox
         return http_build_query($request);
     }
 }
+

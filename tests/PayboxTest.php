@@ -52,6 +52,13 @@ class PayboxTest extends TestCase
     }
 
     /** @test */
+    public function additional_params_can_be_set()
+    {
+        $this->paybox->generateUrl([], ['foo' => 'bar']);
+        $this->assertEquals('bar', Arr::get($this->paybox->getRequest(), 'foo'));
+    }
+
+    /** @test */
     public function config_params_can_be_overridden_on_the_go()
     {
         $this->assertEquals('KGS', Arr::get($this->paybox->getRequest(), 'pg_currency'));
